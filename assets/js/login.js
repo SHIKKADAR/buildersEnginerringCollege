@@ -14,6 +14,16 @@ document.getElementById("submitBtn").addEventListener("click", function(event) {
     }
   });
   
+document.addEventListener("DOMContentLoaded", function() {
+  var aboutLink = document.querySelector('li[onclick="about"] > a');
+  var aboutDropdown = document.querySelector('.about');
+
+  aboutLink.addEventListener("click", function(event) {
+    event.preventDefault();
+    aboutDropdown.classList.toggle("show");
+  });
+});
+
 
 
   

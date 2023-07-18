@@ -6,10 +6,10 @@ window.addEventListener("scroll", function() {
   const currentScrollPos = window.pageYOffset;
 
   if (prevScrollPos > currentScrollPos) {
-    // Scrolling up
+   
     navbar.classList.remove("hide");
   } else {
-    // Scrolling down
+    
     if (currentScrollPos > scrollDistance) {
       navbar.classList.add("hide");
     }
@@ -24,4 +24,5 @@ window.addEventListener("scroll", function() {
     navbar.classList.add("top");
   }
 });
+
 

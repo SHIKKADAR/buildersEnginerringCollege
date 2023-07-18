@@ -1,20 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 * {
-  padding: 0;
   margin: 0;
-  text-decoration: none;
-  list-style: none;
+  padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
 }
 
 .navbar {
-  width: 100%;
   position: fixed;
-  top: 0px;
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: #2A7593;
+  opacity: 1;
+  padding: 10px 20px 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
   transition: top 0.3s ease-in-out, opacity 0.3s ease-in-out;
   opacity: 1;
-  background-color: #2A7593;
-  z-index: 1;
+  /* height: 80px; */
 }
 
 .navbar.hide {
@@ -23,173 +35,137 @@
 }
 
 .navbar.top {
-  background: rgb(202, 225, 224);
-  background: linear-gradient(94deg, rgb(202, 225, 224) 0%, rgb(5, 58, 117) 34%);
+  background-color: #fff;
   color: black;
 }
 
-/* navbar codes correction will be happen here*/
-nav {
-  width: 100%;
+.navbar nav ul {
+  list-style-type: none;
 }
-nav ul {
-  float: right;
-  margin-right: 20px;
-}
-nav li {
-  display: inline-block;
-  line-height: 80px;
-  margin: 0 5px;
-}
-nav a {
-  color: whitesmoke;
-  font-size: 17px;
-  padding: 7px 13px;
-  text-transform: uppercase;
-}
-nav a:hover {
-  border-bottom: 2px solid black;
-}
-nav a.active {
-  background: none;
-}
-nav .active {
-  color: black;
-}
-nav label.logo {
-  color: white;
-  font-size: 35px;
-  padding-left: 10px;
-  padding-top: 100px;
-  top: 10px;
-  font-weight: bold;
+
+.navbar nav ul li {
   position: relative;
+  float: left;
+  padding: 15px;
 }
 
-/* nav bar code ended here*/
-/*dropdown css start*/
-.sub-menu-1 {
+.navbar nav ul li a {
+  padding: 5px;
+  display: block;
+  color: black;
+}
+
+.navbar nav ul li a:hover {
+  border-bottom: 1px solid black;
+}
+
+.navbar nav ul li ul {
+  position: absolute;
+  left: 0;
+  width: 200px;
+  background: #fff;
   display: none;
 }
 
-.anim:hover .sub-menu-1 {
-  display: block;
+.navbar nav ul li .others {
   position: absolute;
-  background: linear-gradient(90deg, rgb(5, 58, 117) 4%, rgb(25, 116, 173) 100%);
-  opacity: 0.9;
-  margin-left: -20px;
-  border-radius: 10px;
-}
-
-.anim .sub-menu-1 ul li a {
-  font-weight: bold;
-  color: white;
-  border: none;
-}
-
-.anim .sub-menu-1 ul {
-  margin: 0;
-}
-
-.anim .sub-menu-1 ul li {
-  height: 60px;
-  margin: 0;
-  width: 230px;
-  border-bottom: 1px solid white;
-}
-
-.anim:hover .sub-menu-1 ul li {
-  display: block;
-}
-
-.sub-menu-2 {
+  left: -100px;
+  width: 200px;
+  background: #fff;
   display: none;
 }
 
-.anim2:hover .sub-menu-2 {
-  display: block;
-  position: absolute;
-  background: linear-gradient(90deg, rgb(5, 58, 117) 4%, rgb(25, 116, 173) 100%);
-  opacity: 0.9;
-  top: 240px;
-  margin-left: 220px;
-  border-radius: 10px;
+.navbar nav ul li ul li {
+  width: 100%;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.anim2:hover .sub-menu-2 ul li {
-  display: block;
+.navbar nav ul li ul li a:hover {
+  border-bottom: none;
 }
 
-.sub-menu-3 {
+.navbar nav ul li ul li a {
+  color: #333;
+}
+
+.navbar nav ul li ul li ul {
+  left: 200px;
+  top: 0;
+}
+
+.navbar nav ul li ul li .Comitee {
+  left: 200px;
+  top: 0;
+  width: 250px;
+}
+
+.navbar nav ul li ul li .departement {
+  left: -400px;
+  top: 0;
+  width: 400px;
+}
+
+.navbar nav ul li:focus-within > ul,
+.navbar nav ul li:hover > ul {
+  display: initial;
+}
+
+#menu-bar {
   display: none;
 }
 
-.anim2:hover .sub-menu-3 ul li {
-  display: block;
-}
-
-.anim2:hover .sub-menu-3 {
-  display: block;
-  position: absolute;
-  background: linear-gradient(90deg, rgb(5, 58, 117) 4%, rgb(25, 116, 173) 100%);
-  opacity: 0.9;
-  top: 300px;
-  margin-left: 220px;
-  border-radius: 10px;
-}
-
-/*dropdown css end*/
-.checkbtn {
+.navbar label {
   font-size: 30px;
-  color: white;
-  float: right;
-  line-height: 80px;
-  margin-right: 10px;
   cursor: pointer;
+  color: #333;
   display: none;
 }
 
-#check {
-  display: none;
-}
-
-@media (max-width: 952px) {
-  nav ul li a {
-    font-size: 16px;
-  }
-}
 @media (max-width: 1100px) {
-  .checkbtn {
-    display: block;
+  .navbar {
+    padding: 20px;
   }
-  ul {
+  .navbar label {
+    display: initial;
+  }
+  .navbar nav {
     position: fixed;
     width: 100%;
-    height: 100vh;
-    background: #2c3e50;
+    background: #fff;
     top: 80px;
     left: -100%;
     text-align: center;
     transition: all 0.5s;
   }
-  nav ul li {
-    display: block;
-    margin: 50px 0;
-    line-height: 30px;
+  .navbar nav ul li {
+    width: 100%;
   }
-  nav ul li a {
-    font-size: 20px;
+  .navbar nav ul li ul {
+    position: relative;
+    width: 100%;
   }
-  a:hover, a.active {
-    background: none;
-    color: #0082e6;
+  .navbar nav ul li ul li {
+    background: #eee;
   }
-  #check:checked ~ ul {
+  .navbar nav ul li ul li ul {
+    left: 0;
+    width: 100%;
+  }
+  #menu-bar:checked ~ nav {
+    display: initial;
     left: 0;
   }
-}
-section {
-  background: url(bg1.jpg) no-repeat;
-  background-size: cover;
-  height: calc(100vh - 80px);
+  .navbar nav ul li ul li .Comitee {
+    left: 0;
+    width: 200px;
+    background-color: #2A7593;
+  }
+  .navbar nav ul li ul li .departement {
+    left: 0;
+    width: 100%;
+  }
+  .navbar nav ul li .others {
+    left: 0px;
+    width: 100%;
+  }
 }/*# sourceMappingURL=admissionpage1.css.map */
